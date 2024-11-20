@@ -133,9 +133,9 @@ public class Algebra {
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
 		int return_value = 0;
-		long max = x;
-		long tmp_max = max;
-		long min = 0;
+		int max = x;
+		int tmp_max = max;
+		int min = 0;
 		if (x<=0){return 0;}
 		while (return_value == 0) {
 			tmp_max = div(max, 2);
