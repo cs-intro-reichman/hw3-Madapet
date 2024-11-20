@@ -24,8 +24,7 @@ public class Algebra {
 		 * System.out.println(sqrt(263169));
 		 * System.out.println(sqrt(76123));
 		 */
-
-		System.out.println(div(6, -3));
+		System.out.println(sqrt(30));
 
 	}
 
@@ -132,32 +131,35 @@ public class Algebra {
 
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
-		int return_value = 0;
-		int max = x;
-		int tmp_max = max;
-		int min = 0;
-		if (x<=0){return 0;}
-		while (return_value == 0) {
-			tmp_max = div(max, 2);
+		int return_value = 0; // the value that is going to get back to the user
+		int max = x; // the upper limit
+		int tmp_max = max; //
+		int min = 0; // the lower limit
+		if (x <= 0) { // make sure that the givin number is bigger then 0
+			return 0;
+		}
+		while (return_value == 0) { // as long as the fun didnt find the sqrt
+			tmp_max = div(max, 2); //
 			if (pow(tmp_max, 2) > x) {
 				max = tmp_max;
 			} else {
 				min = tmp_max;
 				while (return_value == 0) {
-					if (pow(min, 2) >= x) {
+					if (pow(min, 2) == x) {
 						return_value = min;
 					} else {
-						min++;
+
+						if (pow(min, 2) > x) {
+							min--;
+							return_value = min;
+						} else {
+							min++;
+						}
 					}
 				}
 
 			}
-			// div x by 2, if the pow of the return value is bigger than x, set as an upper
-			// value and div again.
-
 		}
-
-		// Replace the following statement with your code
 		return return_value;
 	}
 }
