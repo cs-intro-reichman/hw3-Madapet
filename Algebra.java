@@ -98,25 +98,25 @@ public class Algebra {
 	public static int div(int x1, int x2) {
 		int counter = 0;
 		if (x1 > 0 & x2 > 0 || x1 < 0 & x2 < 0) {
-			x1 = x1 < 0? times(x1 , -1):x1;
-			x2 = x2 <0? times(x2 , -1):x2;
+			x1 = x1 < 0 ? times(x1, -1) : x1;
+			x2 = x2 < 0 ? times(x2, -1) : x2;
 			while (x1 >= x2) {
-				//System.out.println("while1");
+				// System.out.println("while1");
 				x1 = minus(x1, x2);
 				counter++;
 			}
 		} else {
-			//System.out.println("while2");
-			x1 = x1 < 0? times(x1 , -1):x1;
-			x2 = x2 <0? times(x2 , -1):x2;
+			// System.out.println("while2");
+			x1 = x1 < 0 ? times(x1, -1) : x1;
+			x2 = x2 < 0 ? times(x2, -1) : x2;
 			while (x1 >= x2) {
-			x1 = minus(x1, x2);
-			counter--;
+				x1 = minus(x1, x2);
+				counter--;
 			}
 		}
-		
+
 		// Replace the following statement with your code
-		//System.out.println(counter);
+		// System.out.println(counter);
 		return counter;
 	}
 
@@ -133,9 +133,10 @@ public class Algebra {
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
 		int return_value = 0;
-		int max = x;
-		int tmp_max = max;
-		int min = 0;
+		long max = x;
+		long tmp_max = max;
+		long min = 0;
+		if (x<=0){return 0;}
 		while (return_value == 0) {
 			tmp_max = div(max, 2);
 			if (pow(tmp_max, 2) > x) {
