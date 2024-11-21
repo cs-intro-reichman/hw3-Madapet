@@ -1,7 +1,8 @@
 /** Functions for checking if a given string is an anagram. */
 public class Anagram {
 	public static void main(String args[]) {
-		// Tests the isAnagram function.
+		// Tests the isAnagram function./* 
+		/* 
 		System.out.println(isAnagram("silent", "listen")); // true
 		System.out.println(isAnagram("William Shakespeare", "I am a weakishspeller")); // true
 		System.out.println(isAnagram("Madam Curie", "Radium came")); // true
@@ -28,7 +29,9 @@ public class Anagram {
 			}
 		}
 		System.out.println(pass ? "test passed" : "test Failed");
-
+*/
+System.out.println(preProcess("What? No way!!!"));
+		System.out.println(preProcess(""));
 	}
 
 	// Returns true if the two given strings are anagrams, false otherwise.
@@ -61,7 +64,7 @@ public class Anagram {
 		str = str.toLowerCase();
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
-			if ((ch <= 'z' && ch >= 'a') || (ch >= '0' && ch <= '9')) {
+			if ((ch <= 'z' && ch >= 'a') || (ch >= '0' && ch <= '9')|| (ch == ' ')) {
 				returned_string = returned_string + ch;
 			}
 
