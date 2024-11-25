@@ -41,9 +41,7 @@ public class Anagram {
 		String testd1 = removeSpaces(preProcess(str1));
 		String testd2 = removeSpaces(preProcess(str2));
 		int len = testd1.length();
-		System.out.println();
 		for (int i = 0; i < len; i++) {
-			System.out.println(i);
 			if (testd2.indexOf(testd1.charAt(i)) == -1 || testd1.indexOf(testd2.charAt(i)) == -1) {
 				return false;
 			}
