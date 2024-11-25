@@ -29,8 +29,6 @@ public class LoanCalc {
 		System.out.println("number of iterations: " + iterationCounter);
 	}
 
-	
-
 	// Computes the ending balance of a loan, given the loan amount, the periodical
 	// interest rate (as a percentage), the number of periods (n), and the
 	// periodical payment.
@@ -69,24 +67,22 @@ public class LoanCalc {
 	// the number of periods (n), and epsilon, the approximation's accuracy
 	// Side effect: modifies the class variable iterationCounter.
 	public static double bisectionSolver(double loan, double rate, int n, double epsilon) {
-		// Replace the following statement with your code
+		
 		iterationCounter = 0;
-		double payment = loan / n;
-		double low = payment;
-		double Hi = endBalance(loan, rate, n, low) / n;
-		while ((int) (endBalance(loan, rate, n, payment)) != 0) {
-			iterationCounter++;
-			// System.out.println("you created a monster");
-			// System.out.println(Hi);
-			if (endBalance(loan, rate, n, payment) < 0) {
-				Hi = Hi / 2;
-				payment -= Hi;
+		double L = 1.0;
+		double H = loan;
+		double g = 0;
+		while (H - L > epsilon) {
+			g = (H + L) / 2;
+			if (endBalance(loan, rate, n, g) < 0) {
+				H = g;
 			} else {
-				payment += Hi / 2;
-				Hi = Hi / 2;
-
+				L = g;
 			}
+			iterationCounter++;
 		}
-		return payment;
+
+		
+		return g;
 	}
 }
