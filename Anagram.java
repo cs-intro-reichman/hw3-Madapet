@@ -39,14 +39,13 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		String testd1 = preProcess(str1+" ");
-		String testd2 = preProcess(str2+" ");
+		String testd1 = removeSpaces(preProcess(str1));
+		String testd2 = removeSpaces(preProcess(str2));
 		int len = testd1.length();
 		System.out.println();
 		for (int i = 0; i < len; i++) {
 			System.out.println(i);
 			if (testd2.indexOf(testd1.charAt(i)) == -1 || testd1.indexOf(testd2.charAt(i)) == -1) {
-				System.out.println("asd");
 				return false;
 			}
 		}
@@ -93,5 +92,20 @@ public class Anagram {
 		}
 
 		return returned_string;
+	}
+
+	public static String removeSpaces(String str){
+		String returned_string = "";
+		str = str.toLowerCase();
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if ((ch <= 'z' && ch >= 'a') || (ch >= '0' && ch <= '9')) {
+				returned_string = returned_string + ch;
+			}
+
+		}
+		// Replace the following statement with your code
+		return returned_string;
+	
 	}
 }
