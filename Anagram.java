@@ -33,8 +33,7 @@ public class Anagram {
 		 * }
 		 * System.out.println(pass ? "test passed" : "test Failed");
 		 */
-		System.out.println(preProcess("What? No way!!!"));
-		System.out.println(isAnagram("asd asd", "asdasd"));
+	
 	}
 
 	// Returns true if the two given strings are anagrams, false otherwise.
